@@ -5,7 +5,7 @@ def f(x):
     # Define the function for which we are finding the root
     return x * np.sin(x) + np.cos(x)
 
-def bisection(a, b, tol):
+def bisection(a, b, tol, max_iterations=100):
     if f(a) * f(b) >= 0:
         print("Bisection method fails. The function must have different signs at a and b.")
         return None
@@ -13,7 +13,7 @@ def bisection(a, b, tol):
     c = a
     iteration = 1
     points = []
-    while (b - a) / 2.0 > tol:
+    while (b - a) / 2.0 > tol and iteration <= max_iterations:
         c = (a + b) / 2.0
         points.append(c)
         print(f"Iteration {iteration}: a = {a}, b = {b}, c = {c}, f(c) = {f(c)}")
