@@ -1,3 +1,4 @@
+# Implementing the shooting method to solve a boundary value problem
 import numpy as np
 import matplotlib.pyplot as plt
 
